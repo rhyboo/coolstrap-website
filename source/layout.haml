@@ -70,7 +70,7 @@
 
   -# StyleSheets
   = stylesheet_link_tag "style"
-  = yield_content(:application_styles)
+  = yield_content(:styles)
 
   -# All JavaScript at the bottom, except this Modernizr build.
   -# Modernizr enables HTML5 elements & feature detects for optimal performance.
@@ -83,4 +83,4 @@
   / Third parties dependencies
   = javascript_include_tag "plugins"
   = javascript_include_tag "script"
-  = yield_content(:application_js)
+  = yield_content(:javascript)

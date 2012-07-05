@@ -1,0 +1,126 @@
+$sprite-layout:smart;
+@import "sprite/*.png";
+//@include all-sprite-sprites;
+
+@mixin size-sprite($name) {
+  width: image-width('sprite/'+$name+'.png');
+  height: image-height('sprite/'+$name+'.png');
+  @include sprite-sprite($name);
+}
+
+
+
+
+* {
+  @include box-sizing(border-box);
+}
+
+html, body {
+  height: 100%;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+html, body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+section#main {
+  @include translate3d(0px, 0, 0);
+  @include single-transition(transform,1000ms);
+  /*
+  &.first-view { @include translate3d(0px, 0, 0); }
+  &.second-view { @include translate3d(0px, 0, 0); }
+  &.third-view { @include translate3d(0px, 0, 0); }
+  */
+}
+
+
+article#sky {
+  background: #005CC2 image-url('bg-sky.jpg') bottom center no-repeat;
+  background-size: 100% auto;
+  .inner {
+    width: 930px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  h1 { font-size: 38px; margin-bottom: 5px; }
+  h2 { font-size: 22px; }
+  h1, h2 {
+    color: #FFF;
+    line-height: 120%;
+    @include text-shadow(0 2px 1px rgba(#000,.25));
+  }
+  .links {
+    a {
+      @include inline-block;
+      margin: 15px;
+      font-size: 15px;
+      color: #171717;
+      position: relative;
+      &:after {
+        content: '';
+        display: block;
+        position: relative;
+        float: left;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+      &.github:after {
+        @include size-sprite(github-link);
+      }
+      &.demo:after {
+        @include size-sprite(demo-link);
+      }
+    }
+  }
+}
+article#beach {
+  background: #FEFBF5 image-url('bg-beach.jpg') top center no-repeat;
+  background-size: 100% auto;
+}
+
+
+
+#coolstrap {
+  @include size-sprite(logo-big);
+  @include hide-text;
+  margin: 0 auto 30px;
+}
+
+
+
+
+
+
+
+
+/*
+#main {
+  @include border-image(image-url('border-frame.png') 28 round);
+  border-width: 28px;
+}
+#beach,
+#blueprint,
+#main {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+#beach {
+  background-color: #FDFAF5;
+  z-index: 1;
+}
+#blueprint {
+  background-color: red;
+  z-index: 2;
+}
+#main {
+  background-color: blue;
+  z-index: 3;
+}
+*/

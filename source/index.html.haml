@@ -1,8 +1,24 @@
 = content_for :title do
-	Coolstrap
+  Coolstrap
 
--#= content_for :application_styles do
+-#= content_for :styles do
 
 = content_for :principal do
 
-	%div{:role => "main"}
+  -#beach
+  -#blueprint
+  -#main
+
+  %section#main
+    %article#sky
+      .inner
+        #coolstrap Coolstrap
+        %h1 The first Mobile Framework that really keeps you fresh.
+        %h2 Forget all those other frameworks: Coolstrap is structural, HTML5 and CSS3-based, </br>lightweight and highly customizable. For iOS and Android. Feel the breeze.
+        %a.download
+        .links
+          %a.github{'data-target' => '2'} View project on Github
+          %a.demo View demo
+
+    %article#beach
+      %a.github{'data-target' => '1'} View project on Github

@@ -59,6 +59,8 @@ GEM
     middleman-livereload (0.2.1)
       guard-livereload (~> 0.3.1)
     multi_json (1.0.4)
+    oily_png (1.0.2)
+      chunky_png (~> 1.2.1)
     padrino-core (0.10.6)
       activesupport (~> 3.2.0)
       http_router (~> 0.10.2)
@@ -104,3 +106,4 @@ PLATFORMS
 
 DEPENDENCIES
   middleman
+  oily_png
